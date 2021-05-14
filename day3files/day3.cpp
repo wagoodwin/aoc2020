@@ -65,7 +65,7 @@ for (int i = 0; i < 323; i++) {
 }
 
 
-std::cout << input3array[0][0] << "\n";
+std::cout << input3array[1][0] << "\n";
 
 // Next, we'll turn the puzzle input into a giant map of 1s and 0s.
 // We'll use an el-classico nested for loop. Here, we'll scan through 
