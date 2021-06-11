@@ -25,7 +25,7 @@ std::vector <std::string> input2Vec = {};
 // initialize our dummy variable called value
 std::string value;
 
-// lil loop that enters in each value from input2
+// lil loop that enters in each entry from input2
 // to value and then fills inputVec with value.
 while (input2 >> value) { 
     input2Vec.push_back(value); 

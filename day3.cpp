@@ -44,28 +44,111 @@ std::ifstream input3;
 // use the member function .open() of the class ifstream to load in the file
 input3.open("input3.txt");
 
-// Now that we've opened input3, we'll put input3's values in an array.
+// make input3Vec. It'll have 323 rows, where each row is a string line.
+// We're initializing the number of rows with a constructor.
 
-// Dimension 1 has 323 spots and dimension 2
-// has 31 spots. Indexing goes array[row][col], so that means this
-// array has 323 rows and 31 columns.
+std::vector <std::string> input3Vec(323);
 
-std::string input3array[323][31];
+// initialize our dummy variable called value
+std::string value;
+
+// lil loop that enters in each entry from input2
+// to value and then fills inputVec with value.
+while (input3 >> value) { 
+    input3Vec.push_back(value); 
+}
+
+// test to see output
+//for(int i = 0; i < input3Vec.size(); i = i + 1) {
+//std::cout << input3Vec[i] << "\n";
+//}
+
+
+/*
+
+check each line. The position you check
+in each line is based on the remainder.
+
+Specifically, because the slope is down 1 right 3,
+that means you'll be checking the 0th entry in row 0,
+the 3rd entry in row 1, the 6th entry in row 2,
+the 9th entry in row 3, etc. until you hit the 30th
+entry in row 10. Then, the pattern repeats and you
+check the 0th entry in row 11, 3rd entry in row 12, etc.
+
+So, to find which entry we wanna check, we can find
+the remainder of 31/row number. Notice that 31/(row = 1)
+= 31, so  R = 0, which corresponds to the entry
+we wanna check. Also notice that 
+
+
+323/1 = 323
+323/
+
+
+*/
+
+
+int trees;
+
+for (int n = 0; n < 11; n++)
+
 
 for (int i = 0; i < 323; i++) {
 
-    for (int j = 0; j < 31; j++) {
+    if ( input3Vec[i][0 + 3*n] == '#' ) {
 
-        input3 >> input3array[i][j];
-        // the loop is set up such that we'll every col in row 1,
-        // every col in row 2, etc.
-        
+        trees = trees + 1;
     }
-    
+
+    else {
+
+        trees = trees;
+
+    }
+
+
+
+
+
 }
 
+std::cout << trees;
 
-std::cout << input3array[0][0] << "\n";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Next, we'll turn the puzzle input into a giant map of 1s and 0s.
 // We'll use an el-classico nested for loop. Here, we'll scan through 
@@ -77,6 +160,7 @@ std::cout << input3array[0][0] << "\n";
 
 /*
 
+int input3array[323][31];
 int map[323][31];
 
 // Now, take the values from our input file and put then in map
@@ -101,13 +185,10 @@ for (int i = 0; i < 323; i++) {
 }
 
 
+std::cout << map[0][0];
 
 
 */
-
-
-
-
 
 
 
